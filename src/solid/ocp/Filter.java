@@ -33,6 +33,18 @@ public class Filter {
         }
         return oddNumbers;
     }
+
+    public static List<Integer> selectMultipleOf3(List<Integer> numbers) {
+        List<Integer> multiplesOf3 = new ArrayList<Integer>();
+
+        for(Integer number : numbers) {
+            if(number % 3 == 0) {
+                multiplesOf3.add(number);
+            }
+        }
+
+        return multiplesOf3;
+    }
     private static boolean isPrime(int number) {
         if (number < 2) {
             return false;

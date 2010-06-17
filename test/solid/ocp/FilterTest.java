@@ -51,4 +51,11 @@ public class FilterTest {
         assertThat(oddNumbers, not(hasItems(2,4)));
     }
 
+    @Test
+    public void itSelectsMultiplesOf3() {
+        List<Integer> multiplesOf3 = Filter.selectMultipleOf3(Arrays.asList(6,7,8,9,0,11,12));
+        
+        assertThat(multiplesOf3, hasItems(6,9,12));
+        assertThat(multiplesOf3, not(hasItems(7,8,10,11)));
+    }
 }
