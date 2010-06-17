@@ -56,4 +56,17 @@ public class Filter {
         }
         return true;
     }
+
+    public static List<Integer> apply(List<Integer> numbers, String ...filters) {
+        List<Integer> result = null;
+        
+        for(String filter : filters) {
+            if(filter == "odd")
+                result = selectOdd(numbers);
+            else if (filter == "multipleof3")
+                result = selectMultipleOf3(numbers);
+        }
+
+        return result;
+    }
 }

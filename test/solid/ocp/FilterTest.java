@@ -25,8 +25,6 @@ public class FilterTest {
 
 		List<Integer> primeNumbers = Filter.selectPrime(numbers);
 
-        
-		//assertThat(primeNumbers, hasSize(2));
 		assertThat(primeNumbers, hasItems(2, 3));
 		assertThat(primeNumbers, not(hasItems(1, 4)));
 	}
@@ -57,5 +55,13 @@ public class FilterTest {
         
         assertThat(multiplesOf3, hasItems(6,9,12));
         assertThat(multiplesOf3, not(hasItems(7,8,10,11)));
+    }
+
+    @Test
+    public void itRunsRequestedFiltersOnTheGivenList() {
+        List<Integer> oddMultiplesOf3 = Filter.apply(Arrays.asList(9,10,11,12,13,14,15), "odd", "multiplesOf3");
+
+        assertThat(oddMultiplesOf3, hasItems(9, 15));
+        assertThat(oddMultiplesOf3, not(hasItems(10, 11, 12, 13, 14)));
     }
 }
