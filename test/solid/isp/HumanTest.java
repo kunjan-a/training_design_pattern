@@ -21,6 +21,6 @@ public class HumanTest {
     @Test
     public void shouldEat() {
         Worker worker = new Human();
-        assertEquals("humman eats", worker.eat()) ;
+        assertEquals("human eats", worker.eat()) ;
     }
 }
