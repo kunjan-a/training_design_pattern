@@ -1,0 +1,24 @@
+package designpattern.adapter;
+
+import designpattern.adapter.thirdparty.ILeaveRecord;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: goyalamit
+ * Date: Jul 21, 2011
+ * Time: 5:51:23 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public class SalaryDisberser {
+    private ILeaveRecord leaveRecord;
+    private int SALARY = 15000;
+
+    public SalaryDisberser(ILeaveRecord leaveRecord) {
+        this.leaveRecord = leaveRecord;
+    }
+
+    public int salary(String employeeName) {
+        return SALARY - leaveRecord.getEmployeeAbsences(new Employee(employeeName)) * 1000;
+    }
+
+}
